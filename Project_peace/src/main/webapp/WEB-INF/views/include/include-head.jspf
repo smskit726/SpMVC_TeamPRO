@@ -6,6 +6,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>Short Navi</title>
 <link rel="stylesheet" type="text/css" 
-		href= "${rootPath}/static/css/main.css?ver=2020-08-26-002"/>
+		href= "${rootPath}/static/css/main.css?ver=2020-08-27"/>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://kit.fontawesome.com/4f95742a0c.js" crossorigin="anonymous"></script>

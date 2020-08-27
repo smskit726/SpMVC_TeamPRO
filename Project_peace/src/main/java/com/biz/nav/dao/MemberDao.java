@@ -1,11 +1,12 @@
 package com.biz.nav.dao;
 
+import org.apache.ibatis.annotations.Select;
+
 import com.biz.nav.model.MemberVO;
 
-public interface MemberDao {
+public interface MemberDao extends GenericDao<MemberVO, String> {
 
-	public MemberVO login(MemberVO memberVO);
-	public int insert(MemberVO memberVO);
-	public int update(MemberVO memberVO);
-	public int delete(long m_seq);
+	@Select(" SELECT COUNT(*) FROM tbl_member ")
+	public int memberCount();
+
 }

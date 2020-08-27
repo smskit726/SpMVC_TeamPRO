@@ -20,11 +20,13 @@
 	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="oracle_ds" />
 		<property name="configLocation" value="/WEB-INF/spring/mybatis/mybatis-config.xml" />
-		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/member-mapper.xml" />
+		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml" />
 	</bean>
 	
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlFactory" index="0" />
 	</bean>
+	
+	<mybatis-spring:scan base-package="com.biz.nav.dao"/>
 
 </beans>

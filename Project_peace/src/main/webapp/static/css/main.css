@@ -17,7 +17,7 @@ body {
 header {
 	display: flex;
 	flex-flow: column;
-	background-image: url("${rootPath}/static/images/map.jpg");
+	background-image: url("../images/map.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
