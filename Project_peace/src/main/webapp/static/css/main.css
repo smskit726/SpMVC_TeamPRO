@@ -7,11 +7,27 @@
 }
 
 html, body {
+	width:100%;
 	height: 100%;
 }
 
 body {
-	background-color: rgb(231, 213, 167);
+	position: relative;
+	z-index: 1;
+}
+
+body:after {
+	background-image:url("../images/mainBG.jpg");
+	top:0;
+	left:0;
+	position:absolute;
+	background-size:100%;
+	opacity:0.8!important;
+	filter:alpha(opacity=50);
+	z-index:-1;
+	content:"";
+	width:100%;
+	height:100%;
 }
 
 header {

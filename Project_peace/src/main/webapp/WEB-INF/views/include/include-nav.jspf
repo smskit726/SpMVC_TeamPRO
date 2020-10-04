@@ -2,15 +2,67 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
-<link rel="stylesheet" type="text/css" href="${rootPath}/static/css/nav.css?ver=2020-08-26-001"/>
+<link rel="stylesheet" type="text/css"
+	href="${rootPath}/static/css/nav.css?ver=2020-09-01" />
+<link rel="stylesheet" type="text/css"
+	href="${rootPath}/static/css/login.css" />
 
-	<nav>
-		<div class="toggle">
-			<i class="fas fa-bars menu"></i>
-		</div>
-		<ul>
-			<li>Home</li>
+<script>
+	$(function() {
+		$(".menu").click(function() {
+			$("ul").toggle("active")
+		})
+
+		$(".exit").click(function() {
+			document.getElementById('loginModal').style.display = "none";
+		})
+
+		$("nav ul li").click(function() {
+			var text = $(this).text();
+			if (text == "Home") {
+				document.location.href = "${rootPath}/"
+			} else if (text == "로그아웃") {
+				document.location.href = "${rootPath}/member/logout"
+			} else if (text == "로그인") {
+				document.getElementById('loginModal').style.display = "block";
+			} else if (text == "회원가입") {
+				document.location.href = "${rootPath}/member/join"
+			}
+		})
+	})
+</script>
+<nav>
+	<div class="toggle">
+		<i class="fas fa-bars menu"></i>
+	</div>
+	<ul>
+		<li>Home</li>
+		<c:if test="${empty LOGIN}">
 			<li>로그인</li>
 			<li>회원가입</li>
-		</ul>
-	</nav>
+		</c:if>
+
+		<c:if test="${not empty LOGIN}">
+			<li>마이페이지</li>
+			<li>로그아웃</li>
+		</c:if>
+	</ul>
+</nav>
+
+<div id='loginModal' class="modal">
+	<article id="login_body" class="modal-content">
+		<form>
+
+			<div class="toggle">
+				<i class="fas fa-times-circle exit"></i>
+			</div>
+			<h2>
+				<i class="fas fa-cat">&nbsp;</i>로그인
+			</h2>
+			<input name="m_userid" placeholder="사용자 ID" /> <input
+				name="m_password" placeholder="비밀번호" type="password" />
+			<button>로그인</button>
+			<button>회원가입</button>
+		</form>
+	</article>
+</div>

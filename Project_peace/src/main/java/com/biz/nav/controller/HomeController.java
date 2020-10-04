@@ -18,17 +18,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class HomeController {
+	
 	@Autowired
 	@Qualifier("mServiceV1")
 	private MemberService mService;
 	
-	//로그인 페이지(홈화면)
+	// 홈화면 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "home";
 	}
 	
-	// 로그인버튼을 누르면 메인페이지 호출 (MemberDao에 따라 수정 및 추가작업 필요)
+	// 로그인버튼 클릭 시 로그인창 호출
 	@RequestMapping(value = "/main", method = RequestMethod.POST)
 	public String login(@ModelAttribute String id, String pw, Model model) {
 		

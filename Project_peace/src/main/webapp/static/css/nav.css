@@ -36,6 +36,7 @@ div.toggle {
 	display: none;
 }
 
+
 @media ( max-width : 768px) {
 	div.toggle {
 		display: block;

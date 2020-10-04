@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>얼렁뚱땅 블로그</title>
 <!-- 우리가 만든 style을 적용해주기 위하여 해당 경로에 있는 css 파일과 붙여주는 것 -->
 <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
 </head>

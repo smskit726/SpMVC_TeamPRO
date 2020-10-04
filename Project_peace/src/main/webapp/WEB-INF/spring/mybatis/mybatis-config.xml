@@ -6,6 +6,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias 
-			type="com.biz.nav.model.MemberVO" alias="MemVO"/>
+			type="com.biz.nav.model.MemberVO" alias="MemberVO"/>
 	</typeAliases>
 </configuration>
