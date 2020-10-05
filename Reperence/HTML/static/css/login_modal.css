@@ -1,5 +1,6 @@
 section#login_modal {
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4) !important;
@@ -66,10 +67,6 @@ section#login_modal {
   padding: 16px 10px;
   background: none;
 
-  /*
-    input box에 focus(클릭)가 위치할때 실제 input box 바깥쪽에
-    임의 box가 발생하는데 이 box를 보이지 않도록 하는 설정
-    */
   outline: 0;
 
   border: 0;

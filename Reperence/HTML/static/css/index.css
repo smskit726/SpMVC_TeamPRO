@@ -38,6 +38,7 @@ nav#main_nav {
   position: sticky;
   top: 0;
   background-color: rgb(255, 145, 0);
+  z-index: 2;
   width: 100%;
 }
 
@@ -70,10 +71,11 @@ nav#main_nav {
 }
 
 section#main_section {
+  display: flex;
   height: 100%;
   position: relative;
   margin: 10px;
-  z-index: -1;
+  justify-content: center;
 }
 
 footer {
