@@ -2,7 +2,8 @@ package com.biz.navi;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -27,7 +28,7 @@ public class NaverServiceImpl {
 		return queryURL;
 	}
 
-	public MapVO getNaverPath(String queryURL) {
+	public NcRouter getNaverPath(String queryURL) {
 
 		URI restURI = null;
 		RestTemplate restTemp = new RestTemplate();

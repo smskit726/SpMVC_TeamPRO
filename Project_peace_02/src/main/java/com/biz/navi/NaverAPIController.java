@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -19,10 +18,11 @@ public class NaverAPIController {
 	private NaverServiceImpl nService;
 	
 	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json;charset=utf8")
-	public MapVO naverSearch(String sPos, String aPos) {
+	public NcRouter naverSearch(String sPos, String aPos) {
 		String queryURL = nService.queryURL(sPos, aPos);
 		
-		MapVO res = nService.getNaverPath(queryURL);
+		log.debug(sPos);
+		NcRouter res = nService.getNaverPath(queryURL);
 		log.debug("res >>> " + res.toString());
 		
 		return res;
